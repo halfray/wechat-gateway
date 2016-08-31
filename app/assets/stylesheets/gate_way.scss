@@ -1,0 +1,27 @@
+// Place all the styles related to the gate_way controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index_over {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+  background: url("https://wx.qq.com/zh_CN/htmledition/v2/images/web_wechat_login_bg2fd632.jpg") center center / cover no-repeat;
+}
+
+.index_img_content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  padding: auto;
+  height: 276px;
+  width: 276px;
+}
+.index_img{
+  height: 276px;
+  width: 276px;
+}

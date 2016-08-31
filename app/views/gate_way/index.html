@@ -1,0 +1,30 @@
+<div class="index_over">
+    <div class="index_img_content"><img class="index_img"
+                                        src=""></div>
+</div>
+<script>
+    $(function () {
+        var qrcode = ''
+        $.ajax({
+            url: '/gate_way/get_qrcode',
+            success: function (data) {
+                $('.index_img').attr('src', data.url)
+                urlarray = data.url.split('\/')
+                qrcode = urlarray[urlarray.length - 1]
+            }
+        })
+
+        function check_qrcode() {
+            $.ajax({
+                url: '/gate_way/check_qrcode',
+                data: {qrcode: qrcode},
+                success: function (data) {
+                    if (data.result)
+                        window.location = '/gate_way/send_message'
+                }
+            })
+        }
+
+        setInterval(check_qrcode, 1000);
+    })
+</script>

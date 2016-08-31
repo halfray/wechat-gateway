@@ -1,0 +1,5 @@
+get_qrcode_url: http://192.168.2.107:8080/robot/qrcode
+check_qrcode_url: http://192.168.2.107:8080/robot/
+contact_list_url: http://192.168.2.107:8080/robot/contact/
+send_msg_url: http://192.168.2.107:8080/robot/sendMsg
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WechatGetway</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="container" class="effect mainnav-sm" ng-controller='login.baseController'>
+
+  <!--NAVBAR-->
+  <!--===================================================-->
+  <header id="navbar">
+    <div id="navbar-container" class="boxed">
+
+      <!--Brand logo & name-->
+      <!--================================-->
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">
+          <%= image_tag "logo.png", alt: "Logo", class: "brand-icon" %>
+          <div class="brand-title">
+            <span class="brand-text">微信网关</span>
+          </div>
+        </a>
+      </div>
+      <!--================================-->
+      <!--End brand logo & name-->
+
+
+      <!--Navbar Dropdown-->
+      <!--================================-->
+      <div class="navbar-content clearfix">
+        <ul class="nav navbar-top-links pull-left">
+
+          <!--Navigation toogle button-->
+          <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+          <li class="tgl-menu-btn">
+            <a class="mainnav-toggle" href="#">
+              <i class="fa fa-navicon fa-lg"></i>
+            </a>
+          </li>
+
+        </ul>
+        <ul class="nav navbar-top-links pull-right">
+
+          <!--User dropdown-->
+          <li id="dropdown-user" class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right" ng-show="user.email">
+              <span class="pull-right">
+                <%= image_tag "av1.png", alt: "Profile Picture", class: "img-circle img-user media-object" %>
+              </span>
+
+              <div class="username hidden-xs">管理员</div>
+            </a>
+
+
+            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right with-arrow panel-default">
+
+              <div class="pad-all text-right">
+                <a href="" class="btn btn-primary" ng-click="logout()">
+                  <i class="fa fa-sign-out fa-fw"></i> 退出
+                </a>
+              </div>
+            </div>
+          </li>
+          <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+          <!--End user dropdown-->
+
+        </ul>
+      </div>
+      <!--================================-->
+      <!--End Navbar Dropdown-->
+
+    </div>
+  </header>
+  <!--===================================================-->
+  <!--END NAVBAR-->
+
+  <div class="boxed">
+
+    <!--CONTENT CONTAINER-->
+    <!--===================================================-->
+    <div id="content-container">
+
+      <!--Page content-->
+      <!--===================================================-->
+      <div id="page-content">
+        <div class="row">
+
+
+          <div><%= yield %></div>
+        </div>
+      </div>
+      <!--===================================================-->
+      <!--End page content-->
+
+
+    </div>
+    <!--===================================================-->
+    <!--END CONTENT CONTAINER-->
+
+
+    <!--MAIN NAVIGATION-->
+    <!--===================================================-->
+    <nav id="mainnav-container">
+      <div id="mainnav">
+
+        <!--Shortcut buttons-->
+        <div id="mainnav-shortcut">
+        </div>
+
+
+        <!--Menu-->
+        <!--================================-->
+        <div id="mainnav-menu-wrap">
+          <div class="nano">
+            <div class="nano-content">
+              <ul id="mainnav-menu" class="list-group">
+
+                <!--Category name-->
+                <li class="list-header"></li>
+
+                <!--Menu list item-->
+                <li ui-sref-active="active-link">
+                  <a ui-sref="official_account_indices">
+                    <i class="fa fa-line-chart"></i>
+                    <span class="menu-title">
+                      <strong>发送消息</strong>
+                    </span>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div id="copyright">
+            <div class="hide-fixed pull-right pad-rgt">版本 v2.3</div>
+            <p class="pad-lft">&#0169; 2016 捷云天下</p>
+          </div>
+        </div>
+
+        <!--================================-->
+        <!--End menu-->
+
+      </div>
+
+    </nav>
+    <!--===================================================-->
+    <!--END MAIN NAVIGATION-->
+
+
+  </div>
+
+
+  <!-- SCROLL TOP BUTTON -->
+  <!--===================================================-->
+  <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+  <!--===================================================-->
+
+
+</div>
+
+</div>
+
+</body>
+</html>

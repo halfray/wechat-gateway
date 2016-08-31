@@ -1,0 +1,2 @@
+module GateWayHelper
+end

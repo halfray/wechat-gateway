@@ -1,0 +1,101 @@
+<div id="gateway">
+
+    <div class="col-sm-4">
+
+        <div class="panel">
+            <div class="panel-body" style="height: 600px;overflow:auto">
+                <div class="list-group bg-trans bord-no">
+                    <div class="media-block" v-for="user in users">
+                        <!--<a class="media-left" href="#"><img class="img-circle img-sm" alt="Profile Picture"-->
+                                                            <!--v-bind:src="user.HeadImgUrl"></a>-->
+
+                        <div class="media-body">
+                            <div class="mar-btm col-sm-8">
+                                <a href="#"
+                                   class="btn-link text-semibold media-heading box-inline">{{user.NickName}}</a>
+
+                                <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> - 手机在线
+                                </p>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="form-checkbox form-icon form-text">
+                                    <input type="checkbox" v-on:click="getUser(user.UserName)">
+                                </label>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+
+        <div class="panel">
+
+            <!--Chat widget header-->
+            <div class="panel-heading">
+                <h3 class="panel-title">发送给:{{sendUserNames.join(",")}}</h3>
+            </div>
+
+            <!--Chat widget body-->
+            <div class="collapse in">
+                <div class="nano" style="height:500px">
+                    <div class="nano-content pad-all" tabindex="0">
+                        <ul class="list-unstyled media-block">
+                            <li class="mar-btm">
+                                <div class="media-left">
+                                    <%= image_tag "av1.png", alt: "Profile Picture", class: "img-circle img-sm" %>
+                                </div>
+                                <div class="media-body pad-hor">
+                                    <div class="speech">
+                                        <a href="#" class="media-heading">系统</a>
+
+                                        <p>您好，现在你可以从左侧选择用户发送消息了。</p>
+
+                                        <p class="speech-time">
+                                            <i class="fa fa-clock-o fa-fw"></i>09:23AM
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mar-btm" v-for="message in messages">
+                                <div class="media-right">
+                                    <img src="http://www.themeon.net/nifty/v2.5/img//profile-photos/2.png"
+                                         class="img-circle img-sm" alt="Profile Picture">
+                                </div>
+                                <div class="media-body pad-hor speech-right">
+                                    <div class="speech">
+
+                                        <p>{{message.text}}</p>
+
+                                        <p class="speech-time">
+                                            <i class="fa fa-clock-o fa-fw"></i> {{message.currentTime}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nano-pane">
+                        <div class="nano-slider" style="height: 232px; transform: translate(0px, 83.7789px);"></div>
+                    </div>
+                </div>
+
+
+                <!--Chat widget footer-->
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-9">
+                            <input type="text" placeholder="输入要发送的消息" class="form-control chat-input"
+                                   v-model="message">
+                        </div>
+                        <div class="col-xs-3">
+                            <button class="btn btn-primary btn-block" v-on:click="sendMessage">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
